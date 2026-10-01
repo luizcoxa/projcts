@@ -195,5 +195,5 @@ Não anexe os arquivos originais pexels-*.jpg (são pesados).
 |---|---|
 | tarefa1 (raiz) | index.html, projetos.html, cadastro.html, css/, js/, imagens/ |
 | css | estilo.css |
-| js | mascaras.js |
+| js | mascaras.js, cadastro.js |
 | imagens | inicio-voluntarios-com-cao, projetos-resgate-cuidadora-com-cao, projetos-doacao-racao, projetos-voluntariado-adote-me (cada um em .jpg e .webp) |

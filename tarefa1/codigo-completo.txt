@@ -152,7 +152,7 @@
       <h2>Faça parte da nossa causa</h2>
       <p>Preencha o formulário abaixo. Todos os campos são obrigatórios, exceto a mensagem.</p>
 
-      <form action="#" method="post">
+      <form id="form-cadastro" action="#" method="post">
 
         <fieldset>
           <legend>Dados pessoais</legend>
@@ -264,5 +264,6 @@
       <a href="mailto:contato@amigosdosanimais.org">contato@amigosdosanimais.org</a></p>
   </footer>
   <script src="js/mascaras.js"></script>
+  <script src="js/cadastro.js"></script>
 </body>
 </html>
