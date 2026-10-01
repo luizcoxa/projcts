@@ -14,7 +14,7 @@ Cada página tem um único <h1>, que define o tema central; os <h2> dividem o co
 
 ## 2. Página inicial (index.html)
 
-**Trecho de código do index.html** (1639/5000 caracteres)
+**Trecho de código do index.html** (1591/5000 caracteres)
 
 ```
 <!DOCTYPE html>
@@ -22,7 +22,7 @@ Cada página tem um único <h1>, que define o tema central; os <h2> dividem o co
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="ONG Amigos dos Animais: resgate, reabilitação e adoção responsável de animais em situação de abandono.">
+  <meta name="description" content="Resgate, reabilitação e adoção responsável de animais.">
   <title>Início - ONG Amigos dos Animais</title>
   <link rel="stylesheet" href="css/estilo.css">
 </head>
@@ -148,32 +148,32 @@ No cadastro.html, os campos foram agrupados em quatro fieldset, cada um com uma 
 
 **Nome do campo:** CPF (3/60)
 
-**Código da validação ou máscara aplicada** (120/500):
+**Código da validação ou máscara aplicada** (247/500):
 
 ```
-pattern="\d{3}\.\d{3}\.\d{3}-\d{2}" placeholder="000.000.000-00" title="Formato: 000.000.000-00" maxlength="14" required
+pattern="\d{3}\.\d{3}\.\d{3}-\d{2}" maxlength="14" placeholder="000.000.000-00" required data-mascara="cpf". JS: valor.replace(/\D/g,"").slice(0,11).replace(/(\d{3})(\d)/,"$1.$2").replace(/(\d{3})(\d)/,"$1.$2").replace(/(\d{3})(\d{1,2})$/,"$1-$2")
 ```
 
 **Nome do campo:** Telefone (8/60)
 
-**Código da validação ou máscara aplicada** (119/500):
+**Código da validação ou máscara aplicada** (222/500):
 
 ```
-pattern="\(\d{2}\)\s\d{5}-\d{4}" placeholder="(00) 00000-0000" title="Formato: (00) 00000-0000" maxlength="15" required
+pattern="\(\d{2}\)\s\d{5}-\d{4}" maxlength="15" placeholder="(00) 00000-0000" required data-mascara="telefone". JS: valor.replace(/\D/g,"").slice(0,11).replace(/^(\d{2})(\d)/,"($1) $2").replace(/(\d{5})(\d{1,4})$/,"$1-$2")
 ```
 
 **Nome do campo:** CEP (3/60)
 
-**Código da validação ou máscara aplicada** (95/500):
+**Código da validação ou máscara aplicada** (159/500):
 
 ```
-pattern="\d{5}-\d{3}" placeholder="00000-000" title="Formato: 00000-000" maxlength="9" required
+pattern="\d{5}-\d{3}" maxlength="9" placeholder="00000-000" required data-mascara="cep". JS: valor.replace(/\D/g,"").slice(0,8).replace(/^(\d{5})(\d)/,"$1-$2")
 ```
 
-**Impacto na integridade dos dados** (831/1500 caracteres)
+**Impacto na integridade dos dados** (1043/1500 caracteres)
 
 ```
-O atributo pattern recebe uma expressão regular e só deixa o formulário ser enviado se o valor digitado seguir o formato esperado. No cadastro, ele é aplicado ao CPF (000.000.000-00), ao telefone ((00) 00000-0000) e ao CEP (00000-000). O placeholder mostra o modelo, o title explica o formato quando há erro, e o maxlength limita o tamanho. Junto com required (campo obrigatório) e com os tipos email, tel e date, o navegador bloqueia o envio de campos vazios ou fora do padrão e avisa o usuário na hora, sem esperar a resposta do servidor. Isso reduz erros de digitação e mantém os dados padronizados. É importante saber que o pattern valida o formato, não a existência do dado: um CPF pode ter o formato certo e ser inválido. Como o usuário pode burlar a validação do navegador, o servidor também deve validar os dados recebidos.
+O atributo pattern recebe uma expressão regular e só deixa o formulário ser enviado se o valor seguir o formato esperado: CPF (000.000.000-00), telefone ((00) 00000-0000) e CEP (00000-000). Para o usuário não precisar digitar a pontuação nem letras, apliquei também uma máscara de entrada em JavaScript (js/mascaras.js): a cada tecla, o script remove o que não é número, limita a quantidade de dígitos (11 no CPF e no telefone, 8 no CEP) e insere pontos, hífen e parênteses automaticamente. Os atributos completam a proteção: maxlength limita o tamanho, placeholder mostra o modelo, title explica o formato em caso de erro e required impede campos vazios. Com os tipos email, tel e date, o navegador bloqueia o envio de dados vazios ou fora do padrão e avisa na hora, sem esperar o servidor. O pattern continua como validação final caso o JavaScript falhe. Ele valida o formato, não a existência do dado: um CPF pode ter o formato certo e ser inválido. Como o usuário pode burlar o navegador, o servidor também deve validar os dados recebidos.
 ```
 
 ## 6. Entrega final
@@ -193,6 +193,7 @@ Não anexe os arquivos originais pexels-*.jpg (são pesados).
 
 | Diretório | Arquivos |
 |---|---|
-| tarefa1 (raiz) | index.html, projetos.html, cadastro.html |
+| tarefa1 (raiz) | index.html, projetos.html, cadastro.html, css/, js/, imagens/ |
 | css | estilo.css |
+| js | mascaras.js |
 | imagens | inicio-voluntarios-com-cao, projetos-resgate-cuidadora-com-cao, projetos-doacao-racao, projetos-voluntariado-adote-me (cada um em .jpg e .webp) |
