@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="sem-js">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Projetos da ONG: como doar ou ser voluntário.">
+  <title>Projetos - ONG Amigos dos Animais</title>
+  <link rel="stylesheet" href="css/estilo.css">
+</head>
+<body>
+  <a class="pular-conteudo" href="#conteudo">Pular para o conteúdo</a>
+
+  <header>
+    <div class="cabecalho">
+      <p class="marca">ONG Amigos dos Animais</p>
+      <button class="botao-menu" type="button" aria-expanded="false" aria-controls="menu-principal"><span class="icone-menu" aria-hidden="true">🐾</span><span class="texto-menu">Menu</span></button>
+      <nav id="menu-principal" aria-label="Navegação principal">
+        <ul>
+        <li><a href="index.html">Início</a></li>
+        <li class="tem-submenu">
+          <a href="projetos.html" aria-current="page">Projetos</a>
+          <ul class="submenu" aria-label="Projetos">
+            <li><a href="projetos.html#resgate">Resgate e reabilitação</a></li>
+            <li><a href="projetos.html#doacoes">Campanhas de doação</a></li>
+            <li><a href="projetos.html#voluntariado">Voluntariado</a></li>
+          </ul>
+        </li>
+        <li><a href="cadastro.html">Cadastro</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <div class="faixa-titulo">
+    <div>
+      <h1>Nossos Projetos</h1>
+      <p>Atuamos no resgate de animais em risco, na reabilitação veterinária e na adoção responsável.</p>
+    </div>
+  </div>
+
+  <main id="conteudo">
+    <section>
+      <h2>Frentes de Atuação</h2>
+      <div class="grade-12">
+        <article class="card col-12 col-sm-6 col-lg-4" id="resgate">
+          <picture>
+            <source srcset="imagens/projetos-resgate-cuidadora-com-cao.webp" type="image/webp">
+            <img src="imagens/projetos-resgate-cuidadora-com-cao.jpg" alt="Cuidadora acariciando a cabeça de um cão branco e caramelo preso a uma guia rosa" width="600" height="400">
+          </picture>
+          <div class="card-corpo">
+            <span class="badge badge-primario">Resgate</span>
+            <h3>Resgate e reabilitação</h3>
+            <p>Acolhemos animais em risco e oferecemos cuidado veterinário até que estejam prontos para a adoção.</p>
+          </div>
+        </article>
+
+        <article class="card col-12 col-sm-6 col-lg-4" id="doacoes">
+          <picture>
+            <source srcset="imagens/projetos-doacao-racao.webp" type="image/webp">
+            <img src="imagens/projetos-doacao-racao.jpg" alt="Mão despejando ração de um saco de papel em um pote branco" width="400" height="400">
+          </picture>
+          <div class="card-corpo">
+            <span class="badge badge-aviso">Doação</span>
+            <h3>Campanhas de Doação</h3>
+            <p><strong>Financeira:</strong> valores de qualquer quantia ajudam a pagar consultas, vacinas e castrações.</p>
+            <p><strong>Suprimentos:</strong></p>
+            <ul>
+              <li>Ração para cães e gatos</li>
+              <li>Medicamentos e produtos de higiene</li>
+              <li>Cobertores e caixas de transporte</li>
+            </ul>
+            <a class="botao" href="cadastro.html">Quero doar</a>
+          </div>
+        </article>
+
+        <article class="card col-12 col-sm-6 col-lg-4" id="voluntariado">
+          <picture>
+            <source srcset="imagens/projetos-voluntariado-adote-me.webp" type="image/webp">
+            <img src="imagens/projetos-voluntariado-adote-me.jpg" alt="Mulher sorrindo ao lado de um cão preto com bandana vermelha escrita Adote-me" width="600" height="400">
+          </picture>
+          <div class="card-corpo">
+            <span class="badge badge-sucesso">Voluntariado</span>
+            <h3>Programa de Voluntariado</h3>
+            <p>Você pode apoiar o dia a dia do abrigo com tarefas como:</p>
+            <ul>
+              <li>Passeios e socialização dos animais</li>
+              <li>Limpeza e organização dos espaços</li>
+              <li>Divulgação de animais para adoção</li>
+            </ul>
+            <a class="botao botao-secundario" href="cadastro.html">Quero ser voluntário</a>
+          </div>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2026 ONG Amigos dos Animais. Contato:
+      <a href="mailto:contato@amigosdosanimais.org">contato@amigosdosanimais.org</a>
+      &middot; <a href="componentes.html">Guia de componentes</a></p>
+  </footer>
+  <script src="js/interface.js"></script>
+</body>
+</html>

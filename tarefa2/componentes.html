@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="sem-js">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Guia de componentes de feedback do site.">
+  <title>Componentes - ONG Amigos dos Animais</title>
+  <link rel="stylesheet" href="css/estilo.css">
+</head>
+<body>
+  <a class="pular-conteudo" href="#conteudo">Pular para o conteúdo</a>
+
+  <header>
+    <div class="cabecalho">
+      <p class="marca">ONG Amigos dos Animais</p>
+      <button class="botao-menu" type="button" aria-expanded="false" aria-controls="menu-principal"><span class="icone-menu" aria-hidden="true">🐾</span><span class="texto-menu">Menu</span></button>
+      <nav id="menu-principal" aria-label="Navegação principal">
+        <ul>
+        <li><a href="index.html">Início</a></li>
+        <li class="tem-submenu">
+          <a href="projetos.html">Projetos</a>
+          <ul class="submenu" aria-label="Projetos">
+            <li><a href="projetos.html#resgate">Resgate e reabilitação</a></li>
+            <li><a href="projetos.html#doacoes">Campanhas de doação</a></li>
+            <li><a href="projetos.html#voluntariado">Voluntariado</a></li>
+          </ul>
+        </li>
+        <li><a href="cadastro.html">Cadastro</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <div class="faixa-titulo">
+    <div>
+      <h1>Guia de componentes</h1>
+      <p>Padrão visual de badges, alertas, toasts e modais, pronto para ser reutilizado por quem for ligar o site ao back-end.</p>
+    </div>
+  </div>
+
+  <main id="conteudo">
+    <section>
+      <h2>Badges</h2>
+      <p>Etiquetas curtas para categorizar informação. Classe base <code>.badge</code> mais uma variação.</p>
+      <div class="exemplo">
+        <span class="badge badge-primario">Primário</span>
+        <span class="badge badge-sucesso">Sucesso</span>
+        <span class="badge badge-aviso">Aviso</span>
+        <span class="badge badge-erro">Erro</span>
+        <span class="badge badge-info">Informação</span>
+      </div>
+      <pre><code>&lt;span class="badge badge-sucesso"&gt;Voluntariado&lt;/span&gt;</code></pre>
+    </section>
+
+    <section>
+      <h2>Alertas</h2>
+      <p>Mensagens fixas na página. Use <code>role="alert"</code> para erros e <code>role="status"</code> para confirmações.</p>
+      <div class="alerta alerta-sucesso" role="status"><p><strong>Sucesso.</strong> Seu cadastro foi registrado.</p></div>
+      <div class="alerta alerta-erro" role="alert"><p><strong>Erro.</strong> Corrija os campos destacados e tente novamente.</p></div>
+      <div class="alerta alerta-aviso" role="status"><p><strong>Atenção.</strong> Revise seus dados antes de enviar.</p></div>
+      <div class="alerta alerta-info" role="note"><p><strong>Informação.</strong> Todos os campos são obrigatórios, exceto a mensagem.</p></div>
+      <pre><code>&lt;div class="alerta alerta-erro" role="alert"&gt;
+  &lt;p&gt;&lt;strong&gt;Erro.&lt;/strong&gt; Texto da mensagem.&lt;/p&gt;
+&lt;/div&gt;</code></pre>
+    </section>
+
+    <section>
+      <h2>Toasts</h2>
+      <p>Notificações temporárias que não bloqueiam a tela. Somem sozinhas em 6 segundos ou ao clicar em fechar.</p>
+      <div class="exemplo">
+        <button type="button" class="botao" data-toast="sucesso" data-mensagem="Cadastro enviado com sucesso.">Toast de sucesso</button>
+        <button type="button" class="botao botao-secundario" data-toast="info" data-mensagem="Seus dados estão seguros.">Toast de informação</button>
+        <button type="button" class="botao" data-toast="aviso" data-mensagem="Revise os dados antes de enviar.">Toast de aviso</button>
+        <button type="button" class="botao" data-toast="erro" data-mensagem="Não foi possível enviar o cadastro.">Toast de erro</button>
+      </div>
+      <pre><code>mostrarToast("Cadastro enviado com sucesso.", "sucesso");
+// tipos: "sucesso" | "erro" | "aviso" | "info"</code></pre>
+    </section>
+
+    <section>
+      <h2>Modais</h2>
+      <p>Janela de confirmação feita com o elemento nativo <code>&lt;dialog&gt;</code>: o navegador cuida do foco, da tecla Esc e do fundo escurecido (<code>::backdrop</code>).</p>
+      <div class="exemplo">
+        <button type="button" class="botao" data-modal="modal-exemplo">Abrir modal</button>
+      </div>
+      <pre><code>&lt;dialog id="modal" aria-labelledby="titulo"&gt;...&lt;/dialog&gt;
+// abrir: document.getElementById("modal").showModal();
+// fechar: document.getElementById("modal").close();</code></pre>
+    </section>
+  </main>
+
+  <dialog id="modal-exemplo" aria-labelledby="modal-exemplo-titulo">
+    <h2 id="modal-exemplo-titulo">Título do modal</h2>
+    <p>Use o modal para confirmar uma ação importante antes de concluí-la.</p>
+    <div class="modal-acoes">
+      <button type="button" class="botao botao-contorno" data-fechar-modal>Cancelar</button>
+      <button type="button" class="botao" data-fechar-modal>Confirmar</button>
+    </div>
+  </dialog>
+
+  <footer>
+    <p>&copy; 2026 ONG Amigos dos Animais. Contato:
+      <a href="mailto:contato@amigosdosanimais.org">contato@amigosdosanimais.org</a>
+      &middot; <a href="componentes.html">Guia de componentes</a></p>
+  </footer>
+  <script src="js/feedback.js"></script>
+  <script src="js/interface.js"></script>
+</body>
+</html>
